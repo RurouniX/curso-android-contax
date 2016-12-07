@@ -42,7 +42,7 @@ public class CarAdapter extends RecyclerView.Adapter<CarAdapter.CarViewHolder> {
         Car car = mList.get(position);
         holder.mTxtTitle.setText(car.name);
         holder.mTxtDesc.setText(car.desc);
-        Glide.with(mContext).load("http://www.livroandroid.com.br/livro/carros/luxo/Bugatti_Veyron.png").into(holder.mImg);
+        Glide.with(mContext).load(car.urlPhoto).into(holder.mImg);
 
     }
 

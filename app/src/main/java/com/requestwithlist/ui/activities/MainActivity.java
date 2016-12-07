@@ -45,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
             public void onResponse(Call<CarList> call, Response<CarList> response) {
 
                 response.toString();
+                mList.setAdapter(new CarAdapter(mContext, response.body().cars.car));
 
             }
 
@@ -55,7 +56,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        mList.setAdapter(new CarAdapter(mContext, getMockCarList()));
         mList.setLayoutManager(new LinearLayoutManager(mContext, LinearLayoutManager.VERTICAL, false));
 
 
