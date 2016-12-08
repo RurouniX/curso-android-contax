@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
 
     RecyclerView mList;
     Context mContext;
+    View mViewLoading;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,13 +39,12 @@ public class MainActivity extends AppCompatActivity {
         mContext = this;
 
         mList = (RecyclerView) findViewById(R.id.main_list);
-
+        mViewLoading = findViewById(R.id.main_layout_loading);
         Call<CarList> call = HttpRequest.getApiInstance(mContext).getCarList();
         call.enqueue(new Callback<CarList>() {
             @Override
             public void onResponse(Call<CarList> call, Response<CarList> response) {
 
-                response.toString();
                 mList.setAdapter(new CarAdapter(mContext, response.body().cars.car));
 
             }
@@ -61,76 +61,16 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private List<Car> getMockCarList() {
-        List<Car> cars = new ArrayList<>();
-        Car car = null;
-        car = new Car();
-        car.name = "Fusca";
-        car.desc = "Bom bagarai !";
-        cars.add(car);
-        car = new Car();
-        car.name = "Fusca";
-        car.desc = "Bom bagarai !";
-        cars.add(car);
-        car = new Car();
-        car.name = "Fusca";
-        car.desc = "Bom bagarai !";
-        cars.add(car);
-        car = new Car();
-        car.name = "Fusca";
-        car.desc = "Bom bagarai !";
-        cars.add(car);
-        car = new Car();
-        car.name = "Fusca";
-        car.desc = "Bom bagarai !";
-        cars.add(car);
-        car = new Car();
-        car.name = "Fusca";
-        car.desc = "Bom bagarai !";
-        cars.add(car);
-        car = new Car();
-        car.name = "Fusca";
-        car.desc = "Bom bagarai !";
-        cars.add(car);
-        car = new Car();
-        car.name = "Fusca";
-        car.desc = "Bom bagarai !";
-        cars.add(car);
-        car = new Car();
-        car.name = "Fusca";
-        car.desc = "Bom bagarai !";
-        cars.add(car);
-        car = new Car();
-        car.name = "Fusca";
-        car.desc = "Bom bagarai !";
-        cars.add(car);
-        car = new Car();
-        car.name = "Fusca";
-        car.desc = "Bom bagarai !";
-        cars.add(car);
-        car = new Car();
-        car.name = "Fusca";
-        car.desc = "Bom bagarai !";
-        cars.add(car);
-        car = new Car();
-        car.name = "Fusca";
-        car.desc = "Bom bagarai !";
-        cars.add(car);
-        car = new Car();
-        car.name = "Fusca";
-        car.desc = "Bom bagarai !";
-        cars.add(car);
-        car = new Car();
-        car.name = "Fusca";
-        car.desc = "Bom bagarai !";
-        cars.add(car);
-        car = new Car();
-        car.name = "Fusca";
-        car.desc = "Bom bagarai !";
-        cars.add(car);
-        return cars;
+    private void showLoadingView() {
 
     }
 
+    private void showSuccessView() {
+
+    }
+
+    private void showErroView() {
+
+    }
 
 }
