@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
     RecyclerView mList;
     Context mContext;
     View mViewLoading;
+    View mViewError;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,37 +41,64 @@ public class MainActivity extends AppCompatActivity {
 
         mList = (RecyclerView) findViewById(R.id.main_list);
         mViewLoading = findViewById(R.id.main_layout_loading);
+        mViewError = findViewById(R.id.main_layout_error);
+
+
+        findViewById(R.id.main_btn_try_again).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showLoadingView();
+                doRequest();
+
+            }
+        });
+
+        doRequest();
+
+        mList.setLayoutManager(new LinearLayoutManager(mContext, LinearLayoutManager.VERTICAL, false));
+    }
+
+    private void doRequest() {
         Call<CarList> call = HttpRequest.getApiInstance(mContext).getCarList();
         call.enqueue(new Callback<CarList>() {
             @Override
             public void onResponse(Call<CarList> call, Response<CarList> response) {
 
-                mList.setAdapter(new CarAdapter(mContext, response.body().cars.car));
+                if (response.isSuccessful()) {
+                    showSuccessView();
+                    mList.setAdapter(new CarAdapter(mContext, response.body().cars.car));
 
+                } else {
+                    showErroView();
+                }
             }
 
             @Override
             public void onFailure(Call<CarList> call, Throwable t) {
-                t.toString();
+
+                showErroView();
             }
         });
-
-
-        mList.setLayoutManager(new LinearLayoutManager(mContext, LinearLayoutManager.VERTICAL, false));
-
-
     }
 
     private void showLoadingView() {
 
+        mViewLoading.setVisibility(View.VISIBLE);
+        mViewError.setVisibility(View.GONE);
+        mList.setVisibility(View.GONE);
+
     }
 
     private void showSuccessView() {
-
+        mViewLoading.setVisibility(View.GONE);
+        mViewError.setVisibility(View.GONE);
+        mList.setVisibility(View.VISIBLE);
     }
 
     private void showErroView() {
-
+        mViewLoading.setVisibility(View.GONE);
+        mViewError.setVisibility(View.VISIBLE);
+        mList.setVisibility(View.GONE);
     }
 
 }
