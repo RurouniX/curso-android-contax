@@ -1,53 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_description"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context="com.requestwithlist.ui.activities.DescriptionActivity">
-
-
-    <ImageView
-        android:id="@+id/desc_img_header"
-        android:layout_width="match_parent"
-        android:layout_height="250dp"
-        tools:src="@mipmap/ic_launcher" />
-
-    <TextView
-        android:id="@+id/desc_txt_title"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="@android:color/black"
-        android:textSize="26sp"
-        tools:text="TESTE" />
+    android:layout_height="match_parent">
 
     <LinearLayout
+        android:id="@+id/activity_description"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_gravity="center"
-        android:background="@color/colorAccent"
-        android:gravity="center"
-        android:orientation="horizontal">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context="com.requestwithlist.ui.activities.DescriptionActivity">
 
-        <Button
-            android:id="@+id/desc_btn_map"
-            android:layout_width="wrap_content"
+
+        <ImageView
+            android:id="@+id/desc_img_header"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            tools:src="@mipmap/ic_launcher" />
+
+        <TextView
+            android:id="@+id/desc_txt_title"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Abrir mapa" />
+            android:textColor="@android:color/black"
+            android:textSize="26sp"
+            tools:text="TESTE" />
 
-        <Button
-            android:id="@+id/desc_btn_web"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Abrir INformações" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:background="@color/colorAccent"
+            android:gravity="center"
+            android:orientation="horizontal">
 
-    </LinearLayout>
+            <Button
+                android:id="@+id/desc_btn_map"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Abrir mapa" />
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+            <Button
+                android:id="@+id/desc_btn_web"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Abrir INformações" />
+
+        </LinearLayout>
 
         <TextView
             android:id="@+id/desc_txt_desc"
@@ -55,6 +54,6 @@
             android:layout_height="match_parent"
             android:textSize="26sp"
             tools:text="ljreqaSRDYFUGIHJKJHDSADUFAWDFJGKHLKGYJTHDGSFASHJGKKGYJHG" />
-    </ScrollView>
 
-</LinearLayout>
+    </LinearLayout>
+</ScrollView>
