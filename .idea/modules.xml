@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/Curso Android Contax.iml" filepath="$PROJECT_DIR$/Curso Android Contax.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/curso-android-contax.iml" filepath="$PROJECT_DIR$/curso-android-contax.iml" />
     </modules>
   </component>
 </project>
