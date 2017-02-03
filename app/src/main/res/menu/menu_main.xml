@@ -4,7 +4,16 @@
     tools:context="com.requestwithlist.ui.activities.MainActivity">
     <item
         android:id="@+id/action_settings"
-        android:orderInCategory="100"
-        android:title="@string/action_settings"
+        android:icon="@android:drawable/ic_menu_search"
+        android:title="Settings"
+        app:showAsAction="always" />
+    <item
+        android:icon="@android:drawable/ic_menu_agenda"
+        android:title="Agenda"
+        app:showAsAction="never" />
+    <item
+
+        android:icon="@android:drawable/ic_menu_call"
+        android:title="Ligações"
         app:showAsAction="never" />
 </menu>

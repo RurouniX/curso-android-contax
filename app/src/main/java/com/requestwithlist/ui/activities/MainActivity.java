@@ -43,7 +43,6 @@ public class MainActivity extends AppCompatActivity {
         mViewLoading = findViewById(R.id.main_layout_loading);
         mViewError = findViewById(R.id.main_layout_error);
 
-
         findViewById(R.id.main_btn_try_again).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
